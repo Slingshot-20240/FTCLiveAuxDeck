@@ -1,38 +1,30 @@
-# sv
+# 🎵 FTCLiveAuxDeck 🔊
 
-Everything you need to build a Svelte project, powered by [`sv`](https://github.com/sveltejs/cli).
+FTCLive display audio controller  
+presented by **20240 Slingshot**
 
-## Creating a project
+> [!NOTE]
+> 🚧 This project is in early development. Please check back for more information.
 
-If you're seeing this, you've probably already done this step. Congrats!
+> [!WARNING]
+> This is the **development** branch. Please ensure you are on the right branch.
 
-```sh
-# create a new project in the current directory
-npx sv create
+## Development
 
-# create a new project in my-app
-npx sv create my-app
-```
+### Prerequisites
 
-## Developing
+Coming soon...
 
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+### Project Setup
 
-```sh
-npm run dev
+Coming soon...
 
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
-```
+## Legal
 
-## Building
+### Disclaimer
 
-To create a production version of your app:
+*FIRST*®, *FIRST*® Tech Challenge, and FTC® are trademarks of For Inspiration and Recognition of Science and Technology (*FIRST*®) (www.firstinspires.org). These trademarks are used by special permission of _FIRST_ which is not overseeing, involved with, or responsible for this activity, product, or service. © 2025 *FIRST*®. Used by special permission. All rights reserved.
 
-```sh
-npm run build
-```
+### Copyright
 
-You can preview the production build with `npm run preview`.
-
-> To deploy your app, you may need to install an [adapter](https://svelte.dev/docs/kit/adapters) for your target environment.
+© 2025 FTC Team 20240 Slingshot and Contributors. [MIT License](https://github.com/Slingshot-20240/FTCLiveAuxDeck/blob/release/LICENSE).
