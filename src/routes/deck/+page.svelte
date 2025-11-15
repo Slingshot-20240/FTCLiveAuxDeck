@@ -149,7 +149,7 @@
 	}
 
 	function stopTimer() {
-        timer = 0;
+		timer = 0;
 		timerRunning = false;
 		clearTimeout(timeout);
 		abortSound.pause();
@@ -317,7 +317,6 @@
 <svelte:head>
 	<title>{eventCode.toUpperCase()} | FTCLiveAuxDeck</title>
 	<meta name="description" content="FTCLiveAuxDeck" />
-	<link rel="stylesheet" href="style.css" />
 </svelte:head>
 
 <main>
@@ -535,6 +534,8 @@
 {/if}
 
 <style>
+	@import url('/style.css');
+
 	main {
 		padding: 0.8rem;
 		gap: 0.8rem;

@@ -1,7 +1,7 @@
 <script lang="ts">
 	let ip = '';
 	let eventCode = '';
-    let useLocalTime = false;
+	let useLocalTime = false;
 
 	function nav() {
 		window.location.href = `/deck?ip=${ip}&eventCode=${eventCode.toLowerCase()}&useLocalTime=${useLocalTime}`;
@@ -11,7 +11,6 @@
 <svelte:head>
 	<title>FTCLiveAuxDeck</title>
 	<meta name="description" content="FTCLiveAuxDeck" />
-	<link rel="stylesheet" href="style.css" />
 </svelte:head>
 
 <main>
@@ -25,7 +24,7 @@
 		placeholder="Event Code"
 	/>
 	<div>
-		<input type="checkbox" name="useLocalTime" id="use-local-time" bind:checked={useLocalTime}/>
+		<input type="checkbox" name="useLocalTime" id="use-local-time" bind:checked={useLocalTime} />
 		<label for="use-local-time">Use Local Time</label>
 	</div>
 
@@ -35,6 +34,8 @@
 </main>
 
 <style>
+	@import url('/style.css');
+
 	main {
 		align-items: center;
 		gap: 0.8rem;
