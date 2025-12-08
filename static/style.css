@@ -1,31 +1,32 @@
 @font-face {
-	font-family: InterVariable;
-	src: url(/InterVariable.ttf);
+  font-family: InterVariable;
+  src: url(/InterVariable.ttf);
 }
 
-:root, body {
-	margin: 0;
-	padding: 0;
-	font-family: InterVariable, sans-serif;
-    color: #fff;
-    background: #000;
+:root,
+:global(body) {
+  margin: 0;
+  padding: 0;
+  font-family: InterVariable, sans-serif;
+  color: #fff;
+  background: #000;
 }
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
-	user-select: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  user-select: none;
 }
 
 button {
-	font-family: InterVariable, sans-serif;
+  font-family: InterVariable, sans-serif;
 }
 
 main {
-    width: 100vw;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
