@@ -1,0 +1,12 @@
+{
+  "$schema": "../gen/schemas/desktop-schema.json",
+  "identifier": "default",
+  "description": "Capability for the main window",
+  "windows": ["main", "deck-*"],
+  "permissions": [
+    "core:webview:allow-create-webview-window",
+    "core:window:allow-set-focus",
+    "core:default",
+    "opener:default"
+  ]
+}
