@@ -1,7 +1,30 @@
-# Tauri + SvelteKit + TypeScript
+# 🎵 FTCLiveAuxDeck 🔊
 
-This template should help get you started developing with Tauri, SvelteKit and TypeScript in Vite.
+FTCLive event game audio player  
+presented by **20240 Slingshot**
 
-## Recommended IDE Setup
+> [!NOTE]
+> 🚧 This project is in early development. Please check back for more information.
 
-[VS Code](https://code.visualstudio.com/) + [Svelte](https://marketplace.visualstudio.com/items?itemName=svelte.svelte-vscode) + [Tauri](https://marketplace.visualstudio.com/items?itemName=tauri-apps.tauri-vscode) + [rust-analyzer](https://marketplace.visualstudio.com/items?itemName=rust-lang.rust-analyzer).
+> [!WARNING]
+> This is the **development** branch. Please ensure you are on the right branch.
+
+## Development
+
+### Prerequisites
+
+Coming soon...
+
+### Project Setup
+
+Coming soon...
+
+## Legal
+
+### Disclaimer
+
+*FIRST*®, *FIRST*® Tech Challenge, and FTC® are trademarks of For Inspiration and Recognition of Science and Technology (*FIRST*®) (www.firstinspires.org). These trademarks are used by special permission of _FIRST_ which is not overseeing, involved with, or responsible for this activity, product, or service. © 2025 *FIRST*®. Used by special permission. All rights reserved.
+
+### Copyright
+
+© 2025 FTC Team 20240 Slingshot and Contributors. [MIT License](https://github.com/Slingshot-20240/FTCLiveAuxDeck/blob/release/LICENSE).

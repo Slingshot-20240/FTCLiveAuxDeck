@@ -15,6 +15,7 @@
   let dataTs: number;
   let latestDataIndex = -1;
 
+  let firstTime = true;
   let initialized = false;
 
   let matchStartVolume = 1;
@@ -166,8 +167,18 @@
       `ws://${ip}/stream/display/command/?code=${eventCode}`
     );
 
-    ws.onopen = () => {
+    ws.onopen = async () => {
       console.log("WebSocket connection opened");
+
+      if (firstTime) {
+        firstTime = false;
+        try {
+          await invoke("play_sound", { soundName: "unmute", volume: 1 });
+        } catch (error) {
+          console.error("Failed to play sound:", error);
+        }
+        return;
+      }
 
       if (useLocalTime) {
         timeSync.receivedTs = Date.now();
@@ -238,6 +249,7 @@
 
     ws.onclose = () => {
       console.log("WebSocket connection closed");
+      initialized = false;
       clearInterval(timeSync.interval);
       connect();
     };
@@ -317,14 +329,6 @@
       }
     });
   });
-
-  (async () => {
-    try {
-      await invoke("play_sound", { soundName: "unmute", volume: 1 });
-    } catch (error) {
-      console.error("Failed to play sound:", error);
-    }
-  })();
 </script>
 
 <svelte:head>
@@ -550,6 +554,10 @@
         grid-template-columns: 4fr 1fr;
         padding: 0.2rem;
         border: 0.1rem solid #aaa;
+
+        input[type="number"] {
+          width: 2.4rem;
+        }
       }
     }
 

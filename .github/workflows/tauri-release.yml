@@ -74,7 +74,7 @@ jobs:
           APPLE_CERTIFICATE_PASSWORD: ${{ secrets.APPLE_CERTIFICATE_PASSWORD }}
         with:
           tagName: v__VERSION__
-          releaseName: "Console v__VERSION__"
+          releaseName: "FTCLiveAuxDeck v__VERSION__"
           releaseBody: "See the assets to download this version and install."
           releaseDraft: true
           prerelease: false
