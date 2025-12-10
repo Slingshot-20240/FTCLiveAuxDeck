@@ -177,7 +177,6 @@
         } catch (error) {
           console.error("Failed to play sound:", error);
         }
-        return;
       }
 
       if (useLocalTime) {
