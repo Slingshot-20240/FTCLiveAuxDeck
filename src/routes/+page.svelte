@@ -1,21 +1,32 @@
 <script lang="ts">
-  import { invoke } from "@tauri-apps/api/core";
+  import {
+    WebviewWindow,
+    getAllWebviewWindows,
+  } from "@tauri-apps/api/webviewWindow";
 
   let ip = "";
   let eventCode = "";
   let useLocalTime = false;
 
-  function nav() {
-    window.location.href = `/deck?ip=${ip}&eventCode=${eventCode.toLowerCase()}&useLocalTime=${useLocalTime}`;
-  }
+  async function nav() {
+    const existing = (await getAllWebviewWindows()).find(
+      (w) => w.label === "deck-" + eventCode
+    );
 
-  (async () => {
-    try {
-      await invoke("play_sound", { soundName: "unmute", volume: 1 });
-    } catch (error) {
-      console.error("Failed to play sound:", error);
+    if (existing) {
+      existing.setFocus();
+      return;
     }
-  })();
+
+    new WebviewWindow("deck-" + eventCode, {
+      title: eventCode.toUpperCase(),
+      url: `/deck?ip=${ip}&eventCode=${eventCode.toLowerCase()}&useLocalTime=${useLocalTime}`,
+      width: 640,
+      height: 320,
+      minWidth: 640,
+      minHeight: 320,
+    });
+  }
 </script>
 
 <svelte:head>
@@ -51,7 +62,7 @@
     </div>
 
     {#if ip && eventCode}
-      <button on:click={nav}>Go →</button>
+      <button>Go →</button>
     {/if}
   </form>
 </main>

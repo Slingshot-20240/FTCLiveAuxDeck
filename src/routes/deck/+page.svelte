@@ -2,6 +2,10 @@
   import * as types from "$lib/types";
   import { onMount } from "svelte";
   import { invoke } from "@tauri-apps/api/core";
+  import {
+    WebviewWindow,
+    getAllWebviewWindows,
+  } from "@tauri-apps/api/webviewWindow";
 
   let ip = "";
   let eventCode = "";
@@ -47,7 +51,7 @@
     let floored = Math.floor(seconds);
     timer = floored;
 
-    if (seconds >= 150) {
+    if (150 - seconds <= 0.1) {
       playSound("match_start");
     }
 
@@ -143,7 +147,7 @@
     }
   }
 
-  onMount(() => {
+  onMount(async () => {
     const params = new URLSearchParams(window.location.search);
     ip = params.get("ip") || "";
     eventCode = params.get("eventCode") || "";
@@ -174,16 +178,16 @@
           updateType(dataType, dataTs);
         }
       } else {
+        timeSync.sentAt = performance.now();
         ws.send(
           `TIMESYNC:{"jsonrpc":"2.0","id":${timeSync.id},"method":"timesync"}`
         );
-        timeSync.sentAt = ts();
         timeSync.interval = setInterval(() => {
           timeSync.id++;
+          timeSync.sentAt = performance.now();
           ws.send(
             `TIMESYNC:{"jsonrpc":"2.0","id":${timeSync.id},"method":"timesync"}`
           );
-          timeSync.sentAt = ts();
         }, 30000);
       }
     };
@@ -201,7 +205,8 @@
       if (event.data.startsWith("TIMESYNC:")) {
         const message = JSON.parse(event.data.substring(9));
         timeSync.receivedAtLocal = performance.now();
-        timeSync.receivedTs = message.result + (ts() - timeSync.sentAt) / 2;
+        timeSync.receivedTs =
+          message.result + (timeSync.receivedAtLocal - timeSync.sentAt) / 2;
 
         if (!initialized) {
           initialized = true;
@@ -263,21 +268,63 @@
         } else {
           timerPeriod = types.TimerPeriod.AUTO;
           startTimer(150 - offset);
+          console.log(offset);
         }
         break;
       case "SHOW_RESULTS":
-        if (offset < 1000) {
-          playSound("reveal");
-          setTimeout(() => {
-            playSound("results");
-          }, 7026);
+        if (offset > 0.1) {
+          return;
         }
+
+        playSound("reveal");
+        setTimeout(() => {
+          playSound("results");
+        }, 7026);
         break;
       case "ABORT_MATCH":
+        if (offset > 0.1) {
+          return;
+        }
+
         stopTimer();
         break;
     }
   }
+
+  async function home() {
+    const existing = (await getAllWebviewWindows()).find(
+      (w) => w.label === "main"
+    );
+
+    if (existing) {
+      existing.setFocus();
+      return;
+    }
+
+    const mainWindow = new WebviewWindow("main", {
+      title: "FTCLiveAuxDeck",
+      width: 400,
+      height: 300,
+      resizable: false,
+    });
+    mainWindow.setFocus();
+  }
+
+  onMount(async () => {
+    document.addEventListener("keydown", (e) => {
+      if ((e.metaKey || e.ctrlKey) && e.key === "n") {
+        home();
+      }
+    });
+  });
+
+  (async () => {
+    try {
+      await invoke("play_sound", { soundName: "unmute", volume: 1 });
+    } catch (error) {
+      console.error("Failed to play sound:", error);
+    }
+  })();
 </script>
 
 <svelte:head>

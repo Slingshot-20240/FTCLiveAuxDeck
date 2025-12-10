@@ -1,8 +1,12 @@
 {
   "name": "ftcliveauxdeck",
-  "version": "0.1.0",
+  "version": "2025.1.0",
   "description": "",
   "type": "module",
+  "author": {
+    "email": "info@slingshot20240.com",
+    "name": "FTC® Team 20240 Slingshot"
+  },
   "scripts": {
     "dev": "vite dev",
     "build": "vite build",

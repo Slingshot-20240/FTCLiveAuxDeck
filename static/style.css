@@ -10,13 +10,18 @@
   font-family: InterVariable, sans-serif;
   color: #fff;
   background: #000;
+  overflow: hidden;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; 
 }
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  user-select: none;
+  user-select: none !important;
 }
 
 button {

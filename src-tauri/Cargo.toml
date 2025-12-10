@@ -1,8 +1,8 @@
 [package]
-name = "ftcliveauxdeck"
-version = "0.1.0"
-description = "A Tauri App"
-authors = ["you"]
+name = "FTCLiveAuxDeck"
+version = "2025.1.0"
+description = "FTCLiveAuxDeck for DECODE™"
+authors = ["FTC® Team 20240 Slingshot"]
 edition = "2021"
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html

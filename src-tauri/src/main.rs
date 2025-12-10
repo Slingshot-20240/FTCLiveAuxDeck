@@ -1,7 +1,7 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-use std::fs; // Changed from std::fs::File
-use std::io::Cursor; // Import Cursor
+use std::fs;
+use std::io::Cursor;
 use std::path::PathBuf;
 use std::sync::mpsc;
 use std::sync::Mutex;
@@ -56,15 +56,10 @@ fn main() {
         let (_stream, stream_handle) = rodio::OutputStream::try_default().unwrap();
 
         while let Ok(request) = rx.recv() {
-            // 1. Read the ENTIRE file into memory first
-            // This prevents disk lag/buffering issues during playback start
             if let Ok(data) = fs::read(request.path) {
-                // 2. Create a Cursor wrapper around the data
                 let cursor = Cursor::new(data);
 
                 if let Ok(sink) = rodio::Sink::try_new(&stream_handle) {
-                    // 3. Decode from the memory cursor, not the disk file
-                    // This is much more stable for short sound effects
                     match rodio::Decoder::new(cursor) {
                         Ok(source) => {
                             sink.set_volume(request.volume);

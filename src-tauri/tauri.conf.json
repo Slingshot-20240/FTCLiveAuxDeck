@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "ftcliveauxdeck",
-  "version": "0.1.0",
-  "identifier": "com.slingshot20240.ftcliveauxdeck",
+  "productName": "FTCLiveAuxDeck",
+  "version": "2025.1.0",
+  "identifier": "com.slingshot20240.ftcliveauxdeck.decode",
   "build": {
     "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",
@@ -12,9 +12,10 @@
   "app": {
     "windows": [
       {
-        "title": "ftcliveauxdeck",
-        "width": 800,
-        "height": 600,
+        "title": "FTCLiveAuxDeck",
+        "width": 400,
+        "height": 300,
+        "resizable": false,
         "userAgent": "unthrottled",
         "backgroundThrottling": "disabled"
       }
@@ -33,8 +34,7 @@
       "icons/icon.icns",
       "icons/icon.ico"
     ],
-    "resources": [
-      "audio/*"
-    ]
+    "resources": ["audio/*"],
+    "copyright": "© FTC® Team 20240 Slingshot"
   }
 }
