@@ -4,9 +4,8 @@ version = 4
 
 [[package]]
 name = "FTCLiveAuxDeck"
-version = "25.1.0"
+version = "25.1.1"
 dependencies = [
- "once_cell",
  "rodio",
  "serde",
  "serde_json",
