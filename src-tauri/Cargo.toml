@@ -1,6 +1,6 @@
 [package]
 name = "FTCLiveAuxDeck"
-version = "25.1.1"
+version = "25.1.2"
 description = "FTCLiveAuxDeck for DECODE™"
 authors = ["FTC® Team 20240 Slingshot"]
 edition = "2021"

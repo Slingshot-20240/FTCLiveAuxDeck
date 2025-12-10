@@ -555,7 +555,7 @@
         border: 0.1rem solid #aaa;
 
         input[type="number"] {
-          width: 2.4rem;
+          width: 3rem;
         }
       }
     }
