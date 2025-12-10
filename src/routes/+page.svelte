@@ -21,10 +21,10 @@
     new WebviewWindow("deck-" + eventCode, {
       title: eventCode.toUpperCase(),
       url: `/deck?ip=${ip}&eventCode=${eventCode.toLowerCase()}&useLocalTime=${useLocalTime}`,
-      width: 640,
-      height: 320,
-      minWidth: 640,
-      minHeight: 320,
+      width: 680,
+      height: 280,
+      minWidth: 680,
+      minHeight: 280,
     });
   }
 </script>
