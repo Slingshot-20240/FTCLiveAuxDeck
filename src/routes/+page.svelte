@@ -22,20 +22,20 @@
       title: eventCode.toUpperCase(),
       url: `/deck?ip=${ip}&eventCode=${eventCode.toLowerCase()}&useLocalTime=${useLocalTime}`,
       width: 680,
-      height: 280,
+      height: 310,
       minWidth: 680,
-      minHeight: 280,
+      minHeight: 310,
     });
   }
 </script>
 
 <svelte:head>
-  <title>FTCLiveAuxDeck</title>
-  <meta name="description" content="FTCLiveAuxDeck" />
+  <title>FTCLiveAux</title>
+  <meta name="description" content="FTCLiveAux" />
 </svelte:head>
 
 <main>
-  <h1>FTCLiveAuxDeck</h1>
+  <h1>FTCLiveAux</h1>
   <form on:submit|preventDefault={nav}>
     <input
       type="text"

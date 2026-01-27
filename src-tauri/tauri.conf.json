@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "FTCLiveAuxDeck",
-  "version": "25.1.2",
-  "identifier": "com.slingshot20240.ftcliveauxdeck.decode",
+  "productName": "FTCLiveAux",
+  "version": "25.2.0",
+  "identifier": "com.slingshot20240.ftcliveaux.decode",
   "build": {
     "beforeDevCommand": "bun run dev",
     "devUrl": "http://localhost:1420",
@@ -12,7 +12,7 @@
   "app": {
     "windows": [
       {
-        "title": "FTCLiveAuxDeck",
+        "title": "FTCLiveAux",
         "width": 400,
         "height": 300,
         "resizable": false,
