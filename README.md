@@ -1,4 +1,4 @@
-# 🎵 FTCLiveAuxDeck 🔊
+# 🎵 FTCLiveAux 🔊
 
 FTCLive event game audio player  
 presented by **20240 Slingshot**
@@ -27,4 +27,4 @@ Coming soon...
 
 ### Copyright
 
-© 2025 FTC Team 20240 Slingshot and Contributors. [MIT License](https://github.com/Slingshot-20240/FTCLiveAuxDeck/blob/release/LICENSE).
+© 2025 FTC Team 20240 Slingshot and Contributors. [MIT License](https://github.com/Slingshot-20240/FTCLiveAux/blob/release/LICENSE).

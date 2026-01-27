@@ -50,7 +50,7 @@
 
   function startTimer(seconds: number = 150) {
     let floored = Math.floor(seconds);
-    timer = floored;
+    timer = Math.ceil(seconds);
 
     if (150 - seconds <= 0.1) {
       playSound("match_start");
@@ -58,6 +58,8 @@
 
     setTimeout(
       () => {
+        timer = floored;
+
         timerRunning = true;
         let start = 0;
         let nextAt = 0;
@@ -313,7 +315,7 @@
     }
 
     const mainWindow = new WebviewWindow("main", {
-      title: "FTCLiveAuxDeck",
+      title: "FTCLiveAux",
       width: 400,
       height: 300,
       resizable: false,
@@ -331,13 +333,13 @@
 </script>
 
 <svelte:head>
-  <title>{eventCode.toUpperCase()} | FTCLiveAuxDeck</title>
-  <meta name="description" content="FTCLiveAuxDeck" />
+  <title>{eventCode.toUpperCase()} | FTCLiveAux</title>
+  <meta name="description" content="FTCLiveAux" />
 </svelte:head>
 
 <main>
   <div>
-    <h3>FTCLiveAuxDeck</h3>
+    <h3>FTCLiveAux</h3>
     <h5>{eventCode.toUpperCase()} | {ip}</h5>
     <h5>
       Timer: {Math.floor(timer / 60)}:{(timer % 60).toString().padStart(2, "0")}
